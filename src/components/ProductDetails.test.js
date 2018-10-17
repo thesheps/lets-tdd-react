@@ -1,7 +1,7 @@
 import React from "react";
 import ProductDetails from "./ProductDetails";
 import { shallow } from "enzyme";
-import defaultImage from "../../public/img/default.png";
+import defaultImage from "../../public/default.png";
 
 describe("ProductDetails", () => {
   let product = {
@@ -29,5 +29,20 @@ describe("ProductDetails", () => {
     let img = details.find("img");
     expect(img.length).toBe(1);
     expect(img.prop("src")).toEqual(defaultImage);
+  });
+
+  it("contains a lovely textual description of the product", () => {
+    let details = shallow(
+      <ProductDetails
+        product={{
+          description: "a lovely textual description of the product"
+        }}
+      />
+    );
+
+    let description = details.find(".product-description");
+    expect(description.text()).toEqual(
+      "a lovely textual description of the product"
+    );
   });
 });
