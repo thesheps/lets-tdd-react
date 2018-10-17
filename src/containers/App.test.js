@@ -5,9 +5,11 @@ import { shallow } from "enzyme";
 describe("App", () => {
   let app;
 
-  it("renders without blowing up", () => {
+  beforeEach(() => {
     app = shallow(<App />);
   });
+
+  it("renders without blowing up", () => {});
 
   it("contains the layout component", () => {
     let layout = app.find("Layout");

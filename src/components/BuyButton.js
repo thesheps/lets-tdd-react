@@ -1,9 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-class BuyButton extends Component {
-  render() {
-    return <button>Buy Now!</button>;
-  }
-}
+const BuyButton = () => <button>Buy Now!</button>;
 
 export default BuyButton;

@@ -1,10 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import Carousel from "./Carousel";
 
-class Layout extends Component {
-  render() {
-    return <Carousel />;
-  }
-}
+const Layout = () => <Carousel />;
 
 export default Layout;

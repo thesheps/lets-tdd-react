@@ -5,9 +5,11 @@ import { shallow } from "enzyme";
 describe("BuyButton", () => {
   let button;
 
-  it("renders without blowing up", () => {
+  beforeEach(() => {
     button = shallow(<BuyButton />);
   });
+
+  it("renders without blowing up", () => {});
 
   it("contains a button with the correct title", () => {
     let btn = button.find("button");

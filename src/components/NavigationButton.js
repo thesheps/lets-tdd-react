@@ -1,9 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-class NavigationButton extends Component {
-  render() {
-    return <button>{this.props.title}</button>;
-  }
-}
+const NavigationButton = ({ title }) => <button>{title}</button>;
 
 export default NavigationButton;

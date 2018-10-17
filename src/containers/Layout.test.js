@@ -5,9 +5,11 @@ import { shallow } from "enzyme";
 describe("Layout", () => {
   let layout;
 
-  it("renders without blowing up", () => {
+  beforeEach(() => {
     layout = shallow(<Layout />);
   });
+
+  it("renders without blowing up", () => {});
 
   it("contains the carousel component", () => {
     let carousel = layout.find("Carousel");
