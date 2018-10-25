@@ -16,7 +16,7 @@ describe("Search", () => {
     expect(input.prop("placeholder")).toEqual("Search...");
   });
 
-  it("triggers a search when enter is pressed", () => {
+  it("maps the users input to state", () => {
     wrapper
       .find("input")
       .simulate("change", { target: { value: "Dishwasher" } });
