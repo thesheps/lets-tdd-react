@@ -15,4 +15,9 @@ describe("Layout", () => {
     let carousel = layout.find("Carousel");
     expect(carousel.length).toBe(1);
   });
+
+  it("contains the search widget", () => {
+    let search = layout.find("Search");
+    expect(search.length).toBe(1);
+  });
 });
