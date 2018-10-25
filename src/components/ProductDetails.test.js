@@ -5,7 +5,8 @@ import defaultImage from "../../public/default.png";
 
 describe("ProductDetails", () => {
   let product = {
-    imageUrl: "fancy-telly.png"
+    imageUrl: "fancy-telly.png",
+    price: "1"
   };
 
   it("renders without blowing up", () => {});
@@ -17,25 +18,24 @@ describe("ProductDetails", () => {
     expect(img.prop("src")).toEqual(product.imageUrl);
   });
 
-  it("renders the default image placeholder if the product is null", () => {
+  it("renders no image if the product is null", () => {
     let details = shallow(<ProductDetails product={null} />);
     let img = details.find("img");
-    expect(img.length).toBe(1);
-    expect(img.prop("src")).toEqual(defaultImage);
+    expect(img.length).toBe(0);
   });
 
-  it("renders the default image if the product is empty", () => {
+  it("renders no image if the product is empty", () => {
     let details = shallow(<ProductDetails product={{}} />);
     let img = details.find("img");
-    expect(img.length).toBe(1);
-    expect(img.prop("src")).toEqual(defaultImage);
+    expect(img.length).toBe(0);
   });
 
   it("contains a lovely textual description of the product", () => {
     let details = shallow(
       <ProductDetails
         product={{
-          description: "a lovely textual description of the product"
+          description: "a lovely textual description of the product",
+          price: 2
         }}
       />
     );
@@ -46,10 +46,42 @@ describe("ProductDetails", () => {
     );
   });
 
-  it("contains an empty description if the product is null or empty", () => {
+  it("contains an alternative message if the product is null or empty", () => {
     let details = shallow(<ProductDetails />);
+    let description = details.find(".error-message");
 
+    expect(description.text()).toEqual(
+      "Whoops, doesn't look like we can find that product!"
+    );
+  });
+
+  it("renders an alternative message if the product has no price", () => {
+    let product = {
+      price: null,
+      description: "My Bogus Sku",
+      imageUrl: "bogus.png"
+    };
+
+    let details = shallow(<ProductDetails product={product} />);
     let description = details.find(".product-description");
-    expect(description.text()).toEqual("Another great deal!");
+    expect(description.length).toBe(0);
+
+    let error = details.find(".error-message");
+    expect(error.text()).toEqual(
+      "Whoops, doesn't look like we can find that product!"
+    );
+  });
+
+  it("renders the correct price with currency formatting", () => {
+    let product = {
+      price: 19.99,
+      description: "My chep sku",
+      imageUrl: "chep.png"
+    };
+
+    let details = shallow(<ProductDetails product={product} />);
+    let price = details.find(".product-price");
+    expect(price.length).toBe(1);
+    expect(price.text()).toEqual("£19.99");
   });
 });
