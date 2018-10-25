@@ -3,16 +3,24 @@ import Search from "./Search";
 import { shallow } from "enzyme";
 
 describe("Search", () => {
-  let search;
+  let wrapper;
 
   beforeEach(() => {
-    search = shallow(<Search />);
+    wrapper = shallow(<Search />);
   });
 
   it("renders without blowing up", () => {});
 
   it("has the correct placeholder", () => {
-    let input = search.find("input");
+    let input = wrapper.find("input");
     expect(input.prop("placeholder")).toEqual("Search...");
+  });
+
+  it("triggers a search when enter is pressed", () => {
+    wrapper
+      .find("input")
+      .simulate("change", { target: { value: "Dishwasher" } });
+
+    expect(wrapper.find("input").props().value).toEqual("Dishwasher");
   });
 });
