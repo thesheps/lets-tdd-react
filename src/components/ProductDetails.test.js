@@ -45,4 +45,11 @@ describe("ProductDetails", () => {
       "a lovely textual description of the product"
     );
   });
+
+  it("contains an empty description if the product is null or empty", () => {
+    let details = shallow(<ProductDetails />);
+
+    let description = details.find(".product-description");
+    expect(description.text()).toEqual("Another great deal!");
+  });
 });
