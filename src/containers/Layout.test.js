@@ -17,7 +17,7 @@ describe("Layout", () => {
   });
 
   it("contains the search widget", () => {
-    let search = layout.find("Search");
+    let search = layout.find("SearchContainer");
     expect(search.length).toBe(1);
   });
 });

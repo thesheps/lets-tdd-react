@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchResults from "./SearchResults";
 
 class Search extends Component {
   state = {
@@ -8,16 +9,20 @@ class Search extends Component {
   handleChange = event => {
     let value = event.target.value;
     this.setState({ value });
+    this.props.performSearch(value);
   };
 
   render() {
     return (
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={this.handleChange}
-        value={this.state.value}
-      />
+      <div>
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={this.handleChange}
+          value={this.state.value}
+        />
+        <SearchResults />
+      </div>
     );
   }
 }

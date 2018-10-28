@@ -1,10 +1,10 @@
 import React from "react";
-import Search from "../components/Search";
+import SearchContainer from "../containers/SearchContainer";
 import Carousel from "./Carousel";
 
 const Layout = () => (
   <div>
-    <Search />
+    <SearchContainer />
     <Carousel />
   </div>
 );

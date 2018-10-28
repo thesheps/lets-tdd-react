@@ -6,7 +6,7 @@ describe("Search", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Search />);
+    wrapper = shallow(<Search performSearch={() => {}} />);
   });
 
   it("renders without blowing up", () => {});
@@ -22,5 +22,17 @@ describe("Search", () => {
       .simulate("change", { target: { value: "Dishwasher" } });
 
     expect(wrapper.find("input").props().value).toEqual("Dishwasher");
+  });
+
+  it("it calls the mapped function when the search term is changed", () => {
+    let mockFn = jest.fn();
+    const search = <Search performSearch={mockFn} />;
+
+    shallow(search)
+      .find("input")
+      .simulate("change", { target: { value: "Dishwasher" } });
+
+    expect(mockFn.mock.calls.length).toBe(1);
+    expect(mockFn.mock.calls[0][0]).toBe("Dishwasher");
   });
 });
