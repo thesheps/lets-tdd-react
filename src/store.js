@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from "redux";
-import setCurrentProduct from "./reducers";
+import selectCurrentProduct from "./reducers";
 
 const reducers = combineReducers({
-  setCurrentProduct
+  selectCurrentProduct
 });
 
 export default createStore(reducers);

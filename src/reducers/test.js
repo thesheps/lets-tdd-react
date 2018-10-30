@@ -13,7 +13,7 @@ describe("set current product", () => {
 
   it("should return the correct state", () => {
     const action = {
-      type: types.SET_CURRENT_PRODUCT,
+      type: types.SELECT_CURRENT_PRODUCT,
       productId: productId,
       productCode: productCode
     };

@@ -1,9 +1,9 @@
 import types from "../constants";
 
 const actions = {
-  setCurrentProduct(product) {
+  selectCurrentProduct(product) {
     return {
-      type: types.SET_CURRENT_PRODUCT,
+      type: types.SELECT_CURRENT_PRODUCT,
       productId: product.productId,
       productCode: product.productCode
     };

@@ -8,7 +8,7 @@ describe("App", () => {
 
   beforeEach(() => {
     const fn = jest.fn();
-    app = shallow(<App setCurrentProduct={fn} state={initialState} />);
+    app = shallow(<App selectCurrentProduct={fn} state={initialState} />);
   });
 
   it("renders without blowing up", () => {});

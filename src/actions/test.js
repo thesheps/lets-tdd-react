@@ -7,13 +7,13 @@ describe("Actions", () => {
 
   it("should create the set current product action", () => {
     let expectedAction = {
-      type: constants.SET_CURRENT_PRODUCT,
+      type: constants.SELECT_CURRENT_PRODUCT,
       productId: productId,
       productCode: productCode
     };
 
     expect(
-      actions.setCurrentProduct({ productId: 1, productCode: productCode })
+      actions.selectCurrentProduct({ productId: 1, productCode: productCode })
     ).toEqual(expectedAction);
   });
 });

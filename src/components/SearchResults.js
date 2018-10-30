@@ -2,14 +2,14 @@ import React from "react";
 
 const SearchResults = ({
   searchResults = [],
-  setCurrentProduct = () => {}
+  selectCurrentProduct = () => {}
 }) => (
   <ul>
     {searchResults.map(r => (
       <li
         key={r.productId}
         onClick={() => {
-          setCurrentProduct(r);
+          selectCurrentProduct(r);
         }}
       >
         {r.productCode}

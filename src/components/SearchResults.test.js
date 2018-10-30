@@ -24,7 +24,10 @@ describe("SearchResults", () => {
 
     let mockFn = jest.fn();
     let wrapper = shallow(
-      <SearchResults searchResults={searchResults} setCurrentProduct={mockFn} />
+      <SearchResults
+        searchResults={searchResults}
+        selectCurrentProduct={mockFn}
+      />
     );
 
     const result = wrapper.find("li").first();

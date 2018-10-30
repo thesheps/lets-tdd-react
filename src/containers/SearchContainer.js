@@ -20,7 +20,7 @@ class SearchContainer extends Component {
       <div>
         <Search performSearch={this.performSearch} />
         <SearchResults
-          setCurrentProduct={this.props.setCurrentProduct}
+          selectCurrentProduct={this.props.selectCurrentProduct}
           searchResults={this.state.searchResults}
         />
       </div>

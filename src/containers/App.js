@@ -5,9 +5,9 @@ import Carousel from "./Carousel";
 
 import actions from "../actions";
 
-export const App = ({ setCurrentProduct }) => (
+export const App = ({ selectCurrentProduct }) => (
   <div>
-    <SearchContainer setCurrentProduct={setCurrentProduct} />
+    <SearchContainer selectCurrentProduct={selectCurrentProduct} />
     <Carousel />
   </div>
 );
@@ -15,9 +15,9 @@ export const App = ({ setCurrentProduct }) => (
 const mapStateToProps = state => state.currentProduct;
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentProduct: product => {
+  selectCurrentProduct: product => {
     if (product) {
-      dispatch(actions.setCurrentProduct(product));
+      dispatch(actions.selectCurrentProduct(product));
     }
   }
 });
