@@ -1,11 +1,19 @@
 import constants from "../constants";
+import actions from ".";
 
 describe("Actions", () => {
-  it("should create the select-current-product action", () => {
+  const productId = 1;
+  const productCode = "SKU001";
+
+  it("should create the set current product action", () => {
     let expectedAction = {
       type: constants.SET_CURRENT_PRODUCT,
-      productId: 0,
-      productCode: "SKU001"
+      productId: productId,
+      productCode: productCode
     };
+
+    expect(
+      actions.setCurrentProduct({ productId: 1, productCode: productCode })
+    ).toEqual(expectedAction);
   });
 });
