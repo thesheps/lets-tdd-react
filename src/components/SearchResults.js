@@ -1,9 +1,19 @@
 import React from "react";
 
-const SearchResults = ({ searchResults = [] }) => (
+const SearchResults = ({
+  searchResults = [],
+  setCurrentProduct = () => {}
+}) => (
   <ul>
     {searchResults.map(r => (
-      <li key={r.productId}>{r.productCode}</li>
+      <li
+        key={r.productId}
+        onClick={() => {
+          setCurrentProduct(r);
+        }}
+      >
+        {r.productCode}
+      </li>
     ))}
   </ul>
 );

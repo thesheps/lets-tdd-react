@@ -19,7 +19,10 @@ class SearchContainer extends Component {
     return (
       <div>
         <Search performSearch={this.performSearch} />
-        <SearchResults searchResults={this.state.searchResults} />
+        <SearchResults
+          setCurrentProduct={this.props.setCurrentProduct}
+          searchResults={this.state.searchResults}
+        />
       </div>
     );
   }
