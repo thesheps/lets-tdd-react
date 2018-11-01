@@ -1,8 +1,9 @@
 import React from "react";
-import ProductDetails from "./ProductDetails";
+import ProductDetails from "../ProductDetails";
 import { shallow } from "enzyme";
 
 describe("ProductDetails", () => {
+  let defaultImage = "default.png";
   let product = {
     imageUrl: "fancy-telly.png"
   };

@@ -1,5 +1,5 @@
 import constants from "../constants";
-import actions from ".";
+import { selectCurrentProduct } from ".";
 
 describe("Actions", () => {
   const productId = 1;
@@ -15,7 +15,7 @@ describe("Actions", () => {
     };
 
     expect(
-      actions.selectCurrentProduct({ productId: 1, productCode: productCode })
+      selectCurrentProduct({ productId: 1, productCode: productCode })
     ).toEqual(expectedAction);
   });
 });

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Search from "../components/Search";
-import SearchResults from "../components/SearchResults";
+import { SearchResults } from "../components/SearchResults";
 
 import fetchSearchResults from "../api";
 

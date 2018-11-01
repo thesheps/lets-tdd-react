@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationButton from "./NavigationButton";
+import NavigationButton from "../NavigationButton";
 import { shallow } from "enzyme";
 
 describe("NavigationButton", () => {

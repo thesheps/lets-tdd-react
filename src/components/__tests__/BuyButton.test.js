@@ -1,5 +1,5 @@
 import React from "react";
-import BuyButton from "./BuyButton";
+import BuyButton from "../BuyButton";
 import { shallow } from "enzyme";
 
 describe("BuyButton", () => {

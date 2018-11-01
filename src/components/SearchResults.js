@@ -1,16 +1,25 @@
+import { selectCurrentProduct } from "../actions";
+
+import { connect } from "react-redux";
 import React from "react";
 
-const SearchResults = ({
-  searchResults = [],
-  selectCurrentProduct = () => {}
-}) => (
+export const SearchResults = props => (
   <ul>
-    {searchResults.map(r => (
-      <li key={r.productId} onClick={() => selectCurrentProduct(r)}>
-        {r.productCode}
-      </li>
-    ))}
+    {props.searchResults &&
+      props.searchResults.map(r => (
+        <li key={r.productId} onClick={() => props.selectCurrentProduct(r)}>
+          {r.productCode}
+        </li>
+      ))}
   </ul>
 );
 
-export default SearchResults;
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
+  selectCurrentProduct: product => dispatch(selectCurrentProduct(product))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchResults);
