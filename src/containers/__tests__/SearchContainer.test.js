@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
-import SearchContainer from "./SearchContainer";
+import SearchContainer from "../SearchContainer";
 
-jest.mock("../api");
+jest.mock("../../api");
 
 describe("SearchContainer", () => {
   let wrapper;

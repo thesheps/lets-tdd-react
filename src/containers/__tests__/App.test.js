@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { App } from "./App";
-import { initialState } from "../reducers/";
+import { App } from "../App";
+import { initialState } from "../../reducers";
 
 describe("App", () => {
   let app;

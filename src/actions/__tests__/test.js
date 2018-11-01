@@ -1,5 +1,5 @@
-import constants from "../constants";
-import { selectCurrentProduct } from ".";
+import constants from "../../constants";
+import { selectCurrentProduct } from "..";
 
 describe("Actions", () => {
   const productId = 1;
