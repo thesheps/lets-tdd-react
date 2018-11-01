@@ -1,7 +1,6 @@
 import React from "react";
 import ProductDetails from "./ProductDetails";
 import { shallow } from "enzyme";
-import defaultImage from "../../public/default.png";
 
 describe("ProductDetails", () => {
   let product = {
