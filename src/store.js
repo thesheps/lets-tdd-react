@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from "redux";
-import selectCurrentProduct from "./reducers";
+import selectCurrentProduct, { initialState } from "./reducers";
 
 const reducers = combineReducers({
   selectCurrentProduct
 });
 
-export default createStore(reducers);
+export default createStore(reducers, initialState);

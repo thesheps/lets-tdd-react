@@ -6,12 +6,7 @@ const SearchResults = ({
 }) => (
   <ul>
     {searchResults.map(r => (
-      <li
-        key={r.productId}
-        onClick={() => {
-          selectCurrentProduct(r);
-        }}
-      >
+      <li key={r.productId} onClick={() => selectCurrentProduct(r)}>
         {r.productCode}
       </li>
     ))}

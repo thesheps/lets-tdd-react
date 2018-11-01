@@ -1,12 +1,13 @@
 import React from "react";
 import Carousel from "./Carousel";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 
 describe("Carousel", () => {
   let carousel;
+  const product = { productId: 666 };
 
   beforeEach(() => {
-    carousel = shallow(<Carousel />);
+    carousel = mount(<Carousel currentProduct={product} />);
   });
 
   it("renders without blowing up", () => {});
@@ -19,6 +20,7 @@ describe("Carousel", () => {
   it("contains the product details widget", () => {
     let productDetails = carousel.find("ProductDetails");
     expect(productDetails.length).toBe(1);
+    expect(productDetails.props().currentProduct).toEqual(product);
   });
 
   it("contains a 'buy' button", () => {

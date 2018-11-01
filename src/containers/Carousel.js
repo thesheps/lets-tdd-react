@@ -3,11 +3,11 @@ import NavigationButton from "../components/NavigationButton";
 import BuyButton from "../components/BuyButton";
 import ProductDetails from "../components/ProductDetails";
 
-const Carousel = () => (
+const Carousel = ({ currentProduct }) => (
   <div>
     <div>
       <NavigationButton title="<" />
-      <ProductDetails />
+      <ProductDetails currentProduct={currentProduct} />
       <NavigationButton title=">" />
     </div>
 
