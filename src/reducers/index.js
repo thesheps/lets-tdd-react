@@ -7,10 +7,7 @@ export const reducer = (state = initialState, action) => {
     case types.SELECT_CURRENT_PRODUCT:
       return {
         ...state,
-        currentProduct: {
-          productId: action.productId,
-          productCode: action.productCode
-        }
+        currentProduct: action.product
       };
 
     default:

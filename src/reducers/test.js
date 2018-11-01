@@ -14,8 +14,10 @@ describe("set current product", () => {
   it("should return the correct state", () => {
     const action = {
       type: types.SELECT_CURRENT_PRODUCT,
-      productId: productId,
-      productCode: productCode
+      product: {
+        productId: productId,
+        productCode: productCode
+      }
     };
 
     const expectedState = {

@@ -8,8 +8,10 @@ describe("Actions", () => {
   it("should create the set current product action", () => {
     let expectedAction = {
       type: constants.SELECT_CURRENT_PRODUCT,
-      productId: productId,
-      productCode: productCode
+      product: {
+        productId: productId,
+        productCode: productCode
+      }
     };
 
     expect(

@@ -1,27 +1,26 @@
 import { connect } from "react-redux";
-import React, { Component } from "react";
+import React from "react";
 import SearchContainer from "./SearchContainer";
 import Carousel from "./Carousel";
 
 import actions from "../actions";
 
-export class App extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.currentProduct}
-        <SearchContainer
-          selectCurrentProduct={this.props.selectCurrentProduct}
-        />
-        <Carousel currentProduct={this.props.currentProduct} />
-      </div>
-    );
-  }
+export const App = ({ currentProduct, selectCurrentProduct }) => (
+  <div>
+    {currentProduct}
+    <SearchContainer selectCurrentProduct={selectCurrentProduct} />
+    <Carousel currentProduct={currentProduct} />
+  </div>
+);
+
+function fuckOff(state) {
+  console.log(state);
+  return {
+    currentProduct: state.currentProduct
+  };
 }
 
-const mapStateToProps = state => ({
-  currentProduct: state.currentProduct
-});
+const mapStateToProps = state => fuckOff(state);
 
 const mapDispatchToProps = dispatch => ({
   selectCurrentProduct: product => {
